@@ -112,4 +112,12 @@ print("--------------------------------------------------------------------")
 
 # Ejercicio 2
 
+numA = int(input("Ingrese un numero entero"))
+numB= int(input("Ingrese otro numero entero"))
 
+def sumar(numA, numB):
+    resultado = numA + numB
+    return resultado
+
+
+print(sumar(numA,numB))
