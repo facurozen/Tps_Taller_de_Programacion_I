@@ -101,23 +101,107 @@ opreracion_16 = 10 // 3
 print("El resultado de la operación 10 // 3 es:",opreracion_16)
 print("--------------------------------------------------------------------")
 
-# % SIGNIFICA EL MODULO, EL RESIDUO DE LA DIVISIÓN
+# % SIGNIFICA EL MODULO, EL RESTO DE LA DIVISIÓN
 # q)
 print("q)")
 opreracion_17 = 12 % 5
 print("El resultado de la operación 12 % 5 es:",opreracion_17)
 print("--------------------------------------------------------------------")
 
-"""
+
 
 # Ejercicio 2
 
-numA = int(input("Ingrese un numero entero"))
-numB= int(input("Ingrese otro numero entero"))
+numA = int(input("Ingrese un numero entero: "))
+numB= int(input("Ingrese otro numero entero: "))
 
 def sumar(numA, numB):
     resultado = numA + numB
     return resultado
 
+def restar(numA, numB):
+    resultado = numA - numB
+    return resultado
 
-print(sumar(numA,numB))
+
+print("El resultado de sumar",numA, "+",numB, "es:", sumar(numA,numB))
+print("El resultado de restar",numA, "-",numB, "es:", restar(numA,numB))
+
+
+# Ejercicio 3
+
+notaA = int(input("Ingrese la nota del primer parcial: "))
+notaB= int(input("Ingrese la nota del segundo parcial: "))
+
+def promedio(notaA, notaB):
+    promedioNotas = int((notaA + notaB) / 2)
+    return promedioNotas
+
+print("El promedio de notas del alumno fue:",promedio(notaA,notaB))
+
+
+
+# Ejercicio 4
+
+edad = int(input("Ingrese la edad en años: "))
+
+def convertir_edad_a_dias (edad):
+    convertir = edad * 365
+    return convertir
+
+print(edad, "años, son:",convertir_edad_a_dias(edad),"días")   
+
+
+
+# Ejercicio 5
+
+precioMedicamento = float(input("Ingrese el precio del medicamento: "))
+descuento = (precioMedicamento * 35) / 100
+importeFinal = precioMedicamento - descuento
+
+print("El precio original del medicamento es de:",precioMedicamento)
+print("El monto del descuento del medicamento es de:",descuento)
+print("El importe final a pagar es:",importeFinal)
+
+
+
+# Ejercicio 6
+
+aporte1 = float(input("Ingrese el aporte que realizó la primer persona: "))
+aporte2 = float(input("Ingrese el aporte que realizó la segunda persona: "))
+aporte3 = float(input("Ingrese el aporte que realizó la tercer persona: "))
+total = aporte1 + aporte2 + aporte3
+
+porcentaje1 = (aporte1 * 100) / total
+porcentaje2 = (aporte2 * 100) / total
+porcentaje3 = (aporte3 * 100) / total
+
+print("La primera persona aportó:", porcentaje1,"%")
+print("La segunda persona aportó:", porcentaje2,"%")
+print("La tercera persona aportó:", porcentaje2,"%")
+
+
+
+# Ejercicio 7
+
+dineroInvertido = float(input("Ingrese el dinero invertido en el banco: "))
+rendimientoMensual = (2 * dineroInvertido) / 100
+rendimientoTotal = rendimientoMensual * 6
+
+print("Si deja su dinero invertido en el banco, ganará un total de: $",rendimientoTotal)
+"""
+
+
+# Ejercicio 8
+
+medidaMetros = float(input("Ingrese la medida expresada en metros: "))
+conversionCm = float(medidaMetros * 100)
+conversionPulgadas = float(conversionCm / 2.54)
+conversionPies = float(conversionPulgadas / 12)
+conversionYardas = float(conversionPies/3)
+
+print(medidaMetros,"metros, equivalen a",conversionCm,"centímetros")
+print(medidaMetros,"metros, equivalen a",conversionPulgadas,"pulgadas")
+print(medidaMetros,"metros, equivalen a",conversionPies,"pies")
+print(medidaMetros,"metros, equivalen a",conversionYardas,"yardas")
+
