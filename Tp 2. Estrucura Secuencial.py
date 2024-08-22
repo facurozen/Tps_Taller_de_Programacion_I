@@ -189,19 +189,26 @@ rendimientoMensual = (2 * dineroInvertido) / 100
 rendimientoTotal = rendimientoMensual * 6
 
 print("Si deja su dinero invertido en el banco, ganará un total de: $",rendimientoTotal)
-"""
+
 
 
 # Ejercicio 8
 
 medidaMetros = float(input("Ingrese la medida expresada en metros: "))
-conversionCm = float(medidaMetros * 100)
-conversionPulgadas = float(conversionCm / 2.54)
-conversionPies = float(conversionPulgadas / 12)
-conversionYardas = float(conversionPies/3)
+conversionCm = round(float(medidaMetros * 100),2)
+conversionPulgadas = round(float(conversionCm / 2.54),2)
+conversionPies = round(float(conversionPulgadas / 12),2)
+conversionYardas = round(float(conversionPies/3),2)
 
 print(medidaMetros,"metros, equivalen a",conversionCm,"centímetros")
 print(medidaMetros,"metros, equivalen a",conversionPulgadas,"pulgadas")
 print(medidaMetros,"metros, equivalen a",conversionPies,"pies")
 print(medidaMetros,"metros, equivalen a",conversionYardas,"yardas")
+
+"""
+
+# Ejercicio 9
+
+numVendedor = int(input("Ingrese el numero del vendedor: "))
+
 
