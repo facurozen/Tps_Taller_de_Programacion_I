@@ -106,7 +106,7 @@ else:
     elif nota1 < 4 or nota2 < 4:
         print("Tenés que recuperar la materia")
 
-"""
+
 
 # Ejercicio 6
 
@@ -130,3 +130,30 @@ else:
     elif numPag > 600 :
         costoLibro = costoLibroBase + (numPag * 32) + encuadernacion_tela + encuadernacion_especial
         print("El costo del libro es de: $",costoLibro)
+
+
+
+# Ejercicio 7
+
+kmRecorridos = float(input("Ingrese la cantidad de km que debe recorrer el flete: "))
+if kmRecorridos < 0 :
+    print("ERROR, la cantidad de km recorridos debe ser mayor a 0")
+
+else :
+    viajeMinimo = 2700 
+    precioFinal = 0
+
+    if kmRecorridos > 0 and kmRecorridos < 10:
+            precioFinal = kmRecorridos * 400
+            
+    elif kmRecorridos >= 10 :
+            precioFinal = kmRecorridos * 200
+
+    if precioFinal < viajeMinimo :
+            precioFinal = viajeMinimo
+
+print("El precio del viaje es de: $",precioFinal)
+
+"""
+
+# Ejercicio 8
