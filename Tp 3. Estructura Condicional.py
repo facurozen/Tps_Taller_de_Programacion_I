@@ -154,6 +154,61 @@ else :
 
 print("El precio del viaje es de: $",precioFinal)
 
-"""
+
 
 # Ejercicio 8
+
+numAño = int(input("Ingrese el numero del año que queres saber si es bisiesto: "))
+
+if numAño % 4 != 0 :
+    print("El año",numAño,"NO es bisiesto")
+
+else :
+    if numAño % 100 != 0 :
+        print("El año",numAño," SÍ es bisiesto")
+
+    else :
+        if numAño % 400 == 0 :
+            print("El año",numAño,"SÍ es bisiesto")
+        
+        else :
+            print("El año",numAño,"NO es bisiesto")
+
+"""
+
+# Ejercicio 9 FALTA HACER
+
+# Ejercicio 10
+
+# Defino la función arriba, no es como en c# ya que python es un lenguaje interpretado y va ejecutando linea por linea, entonces, si igualo una variable a una funcion, y todavia no esta definida, va a tirar error
+def calcularDescuentos(sueldoBruto) :
+    descuentoJub = (11 * sueldoBruto) / 100
+    descuentoObra = (3 * sueldoBruto) / 100
+    descuentoSind = (3 * sueldoBruto) / 100
+
+    descuentosTotal = descuentoJub + descuentoObra + descuentoSind
+
+    return descuentosTotal
+
+sueldoBasico = float(input("Ingrese el sueldo basico del empleado: "))
+añosAntiguedad = int(input("Ingrese los años de antiguedad del empelado: "))
+estadoCivil = int(input("Ingrese su estado civíl. Si es SOLTERO ingrese 1, si es CASADO ingrese 2: "))
+
+if estadoCivil != 1 and estadoCivil != 2 :
+    print("ERROR, 1 y 2 son los unicos números validos")
+
+else :
+    if estadoCivil == 1 :
+        incrementoSoltero = (5 * sueldoBasico) / 100
+        incrementoAntiguedad = incrementoSoltero * añosAntiguedad
+        
+    else :
+        incrementoCasado = (7 * sueldoBasico) / 100
+        incrementoAntiguedad = incrementoCasado * añosAntiguedad
+     
+
+    sueldoBruto = sueldoBasico + incrementoAntiguedad
+    descuentoTotal = calcularDescuentos(sueldoBruto)
+    sueldoNeto = sueldoBruto - descuentoTotal
+
+    print("El empleado tendrá un sueldo neto de: $",sueldoNeto)
