@@ -131,7 +131,7 @@ while acumulador <= 100 :
     
 print("Para que la suma de los números pares llegue a 100, se ingresaron: ",contador,"números")
 
-"""
+
 # Ejercicio 9
 numPatente = 0
 contadorPar = 0
@@ -139,13 +139,59 @@ contadorImpar = 0
 
 while numPatente != -1 :
     numPatente = int(input("Ingrese el número de la patente: "))
-    while numPatente !=-1 and (numPatente <0 or numPatente > 9) :
+    if numPatente !=-1 and (numPatente <0 or numPatente > 9) :
         print("ERROR, la terminación de la patente debe estar entre 0 y 9")
         
+    else:
         if numPatente % 2 == 0 :
             contadorPar += 1
         
-        else: 
-            contadorImpar += 1
+        else:
+            if numPatente != -1 :
+                contadorImpar += 1
 
 print("Al final del día, han pasado:",contadorPar,"vehiculos con la patente con numeración par y",contadorImpar,"vehiculos con la patente con numeración impar")
+
+
+# Ejercicio 10
+
+numFactorial = int(input("Ingrese el número que quiere calcular su factorial: "))
+i = 1
+resultado = 1
+
+while numFactorial < 0:
+    print("ERROR, ingrese un número mayor a 0")
+    numFactorial = int(input("Ingrese el número que quiere calcular su factorial: "))
+
+while i <= numFactorial :
+    resultado = resultado * i
+    i+= 1
+
+print(resultado)
+
+
+
+# Ejercicio 11
+
+h = int(input("Ingrese el número que quiere saber si es un número primo: "))
+
+while h <= 0 :
+    print("ERROR, ingrese un número mayor a 0")
+    h = int(input("Ingrese el número que quiere saber si es un número primo: "))
+
+"""
+
+# Ejercicio 12
+
+numero = int(input("Ingrese un numero: "))
+i = 0
+resultado = 0
+
+while i <= numero :
+    resultado = i +1
+    i += 1
+
+print(resultado)
+
+
+
