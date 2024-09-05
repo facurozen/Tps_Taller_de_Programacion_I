@@ -1,4 +1,4 @@
-# Trabajo Práctico 2
+# Trabajo Práctico 3
 
 # Ejercicio 1
 
@@ -88,7 +88,6 @@ else:
     print("La ley NO ha sido aprobada")
     
 
-
 # Ejercicio 5
 
 nota1 = int(input("Ingrese la nota del primer parcial: "))
@@ -107,28 +106,27 @@ else:
         print("Tenés que recuperar la materia")
 
 
-
 # Ejercicio 6
 
 numPag = int(input("Ingrese la cantidad de páginas que contiene el libro: "))
 costoLibroBase = 5000
 encuadernacion_tela = 1200
 encuadernacion_especial = 3360
-
+costoPag = 32
 if numPag <= 0 :
     print("ERROr, ingrese una cantidad de páginas valida, de 1 en adelante") 
 
 else:
     if numPag <= 300 :
-        costoLibro = costoLibroBase + (numPag * 32)
+        costoLibro = costoLibroBase + (numPag * costoPag)
         print("El costo del libro es de: $",costoLibro)
     
     elif numPag > 300 and numPag <= 600 :
-        costoLibro = costoLibroBase + (numPag * 32) + encuadernacion_tela
+        costoLibro = costoLibroBase + (numPag * costoPag) + encuadernacion_tela
         print("El costo del libro es de: $",costoLibro)
     
     elif numPag > 600 :
-        costoLibro = costoLibroBase + (numPag * 32) + encuadernacion_tela + encuadernacion_especial
+        costoLibro = costoLibroBase + (numPag * costoPag) + encuadernacion_especial
         print("El costo del libro es de: $",costoLibro)
 
 
@@ -152,7 +150,7 @@ else :
     if precioFinal < viajeMinimo :
             precioFinal = viajeMinimo
 
-print("El precio del viaje es de: $",precioFinal)
+    print("El precio del viaje es de: $",precioFinal)
 
 
 
@@ -173,6 +171,7 @@ else :
         
         else :
             print("El año",numAño,"NO es bisiesto")
+
 
 """
 
@@ -212,3 +211,4 @@ else :
     sueldoNeto = sueldoBruto - descuentoTotal
 
     print("El empleado tendrá un sueldo neto de: $",sueldoNeto)
+    
