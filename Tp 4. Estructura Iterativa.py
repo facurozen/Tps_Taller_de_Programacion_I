@@ -42,17 +42,19 @@ print("El número mayor del conjunto de numeros que ingresaste fue:",numMayor)
 print("El número menor del conjunto de numeros que ingresaste fue:",numMenor)
 
 
-
 # Ejercicio 4
 
 suma = 0
-
-for i in range(42,177) :
+num1 = 42
+num2 = 176
+i = 42
+while i >= 42 and i < 176 :
     if i % 2 != 0 :
         suma += i
+    i+=1
+    print(i)
 
 print("La suma de todos los numeros impares comprendidos entre 42 y 176 es:",suma)
-
 
 
 # Ejercicio 5
@@ -92,14 +94,13 @@ while i <= 12 :
     print(numero, "*",i,"=",numero*i)
     i+=1
 
-
-
 # Ejercicio 7
 contador = 0
 acumulador = 0
 numMayor = -9999
+i = 1
 
-for i in range(1,11) :
+while i <= 10 :
     numero = int(input("Ingrese un numero: "))
     contador += 1
     acumulador += numero
@@ -108,12 +109,19 @@ for i in range(1,11) :
         numMayor = numero
         posMayor = i
 
+    i+= 1
+
 promedio = acumulador / contador
 print(" ")
-print("El promedio de los datos ingresados es:",promedio)
+
+if acumulador == 0 :
+    print("Error, no se puede dividir por cero")
+
+else:
+    print("El promedio de los datos ingresados es:",promedio)
+
 print("El número ingresado mas grande es:",numMayor)
 print("La posicion en la que se encuentra el número mas grande es:",posMayor)
-
 
 
 # Ejercicio 8
@@ -130,7 +138,6 @@ while acumulador <= 100 :
     contador += 1
     
 print("Para que la suma de los números pares llegue a 100, se ingresaron: ",contador,"números")
-
 
 # Ejercicio 9
 numPatente = 0
@@ -167,17 +174,32 @@ while i <= numFactorial :
     resultado = resultado * i
     i+= 1
 
-print(resultado)
-
+print("El factorial de",numFactorial,"es:",resultado)
 
 
 # Ejercicio 11
 
 h = int(input("Ingrese el número que quiere saber si es un número primo: "))
+divisores = 2
+contadorDivisores = 0
 
 while h <= 0 :
     print("ERROR, ingrese un número mayor a 0")
     h = int(input("Ingrese el número que quiere saber si es un número primo: "))
+
+while divisores < h :
+    if h % divisores == 0 :
+        contadorDivisores += 1
+
+    divisores += 1
+
+if contadorDivisores == 0 :
+    print("El número",h,"es primo")
+
+else :
+    print("El número",h,"NO es primo")
+
+
 
 """
 
