@@ -80,7 +80,7 @@ else :
     print("La cantidad de alumnos que desaprobaron con una nota menor a 4 es:",contadorReprobados)
     print("El porcentaje de alumnos que estan aplazados es:",porcentajeAplazados,"%")
 
-"""
+
 
 # Ejercicio 3
 
@@ -158,3 +158,77 @@ print(" ")
 print("Se han realizado un total de:",cantVentasTotal,"ventas")
 print("Se han realizado un total de:",cantVentasDescuento10,"ventas en las que se aplicó un 10% de descuento")
 print("Se han realizado un total de:",cantVentasPrecioBase,"en las que no se aplicó ningún descuento")
+
+
+
+# Ejercicio 4
+
+numCliente = int(input("Ingrese el número del cliente: "))
+totalFactura = float(input("Ingrese el valor total de la factura: "))
+
+descuentoPesos = 200
+descuentoPorcentaje = totalFactura * 0.02
+
+if descuentoPesos > descuentoPorcentaje :
+    totalDescuento = totalFactura - descuentoPesos
+    
+else :
+    totalDescuento = totalFactura - descuentoPorcentaje
+
+totalFactura = totalFactura
+
+multaPesos = 350
+multaPorcentaje = totalFactura * 0.10
+
+if multaPesos > multaPorcentaje :
+    totalMulta = totalFactura + multaPesos 
+    
+else :
+    totalMulta = totalFactura + multaPorcentaje
+
+print(" ")
+print("Cliente N°:",numCliente )
+print(" ")
+print("Si paga antes del día 10 del mes siguiente, debera pagar: ",totalDescuento)
+print("Si no paga antes del día 10, pero paga antes del día 20 del mes siguiente, debera pagar:",totalFactura)
+print("Si paga después del día 20 del mes siguiente, debera pagar:",totalMulta)
+
+"""
+
+# Ejercicio 5
+
+d = int(input("Ingrese el día: "))
+m = int(input("Ingrese el mes: "))
+a = int(input("Ingrese el año: "))
+
+n = int(input("Ingrese la cantidad de días que le quiere sumar a la fecha: "))
+
+while n <0 or n > 31 :
+    print("ERROR, la cantidad de dias ingresados debe ser mayor o igual a 0 y menor o igual a 31")
+    n = int(input("Ingrese la cantidad de días que le quiere sumar a la fecha: "))
+
+diasAgregados = d + n
+
+if (m == 4 or m == 6 or m == 9 or m == 11) and diasAgregados > 30 and diasAgregados < 365 :
+    a = a
+    m = m + 1
+    d = diasAgregados - 30
+
+elif (m == 1 or m == 3 or m == 5 or m == 7 or m == 8 or m == 10 or m == 12) and diasAgregados > 31 and diasAgregados < 365 :
+    a = a
+    m = m + 1
+    d = diasAgregados - 31
+
+print("La nueva fecha es:",d,"/",m,"/",a)
+
+"""
+else :
+    if numAño % 100 != 0 :
+        print("El año",numAño," SÍ es bisiesto")
+
+    else :
+        if numAño % 400 == 0 :
+            print("El año",numAño,"SÍ es bisiesto")
+        
+        else :
+            print("El año",numAño,"NO es bisiesto")"""
