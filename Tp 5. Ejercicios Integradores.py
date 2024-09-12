@@ -326,7 +326,7 @@ print("El importe total de sueldos de la categoría 2 es:",importeTotal2)
 print("El importe total de sueldos de la categoría 3 es:",importeTotal3)
 print("El salario promedio es:",promedio)
 
-"""
+
 
 # Ejercicio 9
 
@@ -347,8 +347,51 @@ while i <= numero :
 
 print("La suma de los números impares es: ",sumaImpares)
 
+"""
 
 # Ejercicio 10
 
 cantEspectadores = int(input("Ingrese la cantidad de espectadores: "))
-descuento = int(input("Ingrese 1 (si la función tiene descuento) o 2 (si la función NO tiene descuento)"))
+while cantEspectadores < 0:
+    print("ERROR, la cantidad de espectadores debe ser mayor a 0")
+    cantEspectadores = int(input("Ingrese la cantidad de espectadores: "))
+
+PRECIO_SIN_DESCUENTO = 5000
+PRECIO_CON_DESCUENTO = 3500
+recuadacionPorFuncion = 0
+acumRecaudacion = 0
+cantDescuento = 0
+cantFunciones = 0
+acumEspectadores = 0
+
+while cantEspectadores != 0 :
+    descuento = int(input("Ingrese 1 (si la función tiene descuento) o 2 (si la función NO tiene descuento): "))
+    while descuento != 1 and descuento != 2 :
+        print("ERROR, si la función tiene descuento se debe ingresar 1, y si no tiene descuento se debe ingresar 2")
+        descuento = int(input("Ingrese 1 (si la función tiene descuento) o 2 (si la función NO tiene descuento): "))
+
+    if descuento == 1 :
+        recuadacionPorFuncion = PRECIO_CON_DESCUENTO * cantEspectadores
+        acumRecaudacion = acumRecaudacion + recuadacionPorFuncion
+        cantDescuento = cantDescuento + cantEspectadores
+
+    else :
+        recuadacionPorFuncion = PRECIO_SIN_DESCUENTO * cantEspectadores
+        acumRecaudacion = acumRecaudacion + recuadacionPorFuncion
+
+    cantFunciones += 1
+    acumEspectadores = acumEspectadores + cantEspectadores
+    print(" ")
+    cantEspectadores = int(input("Ingrese la cantidad de espectadores: "))
+
+print(" ")
+print("El complejo ha recaudado un total de: $",acumRecaudacion)
+
+if cantFunciones != 0 :
+    porcentajeDescuento = (cantDescuento * 100) / acumEspectadores
+    print("Han ingresado un total de",cantDescuento,"espectadores con descuento, lo que representa a un",porcentajeDescuento,"% del total de los espectadores")
+else :
+    print("No se puede calcular el porcentaje ya que no hay funciones cargadas")
+
+
+
