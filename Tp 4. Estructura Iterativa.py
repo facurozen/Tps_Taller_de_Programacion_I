@@ -180,25 +180,24 @@ print("El factorial de",numFactorial,"es:",resultado)
 # Ejercicio 11
 
 h = int(input("Ingrese el número que quiere saber si es un número primo: "))
-divisores = 2
+divisores = 1 # Comenzamos con el primer divisor posible, que es 1
 contadorDivisores = 0
 
 while h <= 0 :
     print("ERROR, ingrese un número mayor a 0")
     h = int(input("Ingrese el número que quiere saber si es un número primo: "))
 
-while divisores < h :
+while divisores <= h :
     if h % divisores == 0 :
         contadorDivisores += 1
 
     divisores += 1
 
-if contadorDivisores == 0 :
+if contadorDivisores == 2 :
     print("El número",h,"es primo")
 
 else :
     print("El número",h,"NO es primo")
-
 
 
 """
@@ -206,14 +205,7 @@ else :
 # Ejercicio 12
 
 numero = int(input("Ingrese un numero: "))
-i = 0
-resultado = 0
 
-while i <= numero :
-    resultado = i +1
-    i += 1
-
-print(resultado)
 
 
 
