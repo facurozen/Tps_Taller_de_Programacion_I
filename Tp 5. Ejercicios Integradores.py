@@ -193,7 +193,7 @@ print("Si paga antes del día 10 del mes siguiente, debera pagar: ",totalDescuen
 print("Si no paga antes del día 10, pero paga antes del día 20 del mes siguiente, debera pagar:",totalFactura)
 print("Si paga después del día 20 del mes siguiente, debera pagar:",totalMulta)
 
-"""
+
 
 # Ejercicio 5
 
@@ -203,16 +203,22 @@ a = int(input("Ingrese el año: "))
 
 n = int(input("Ingrese la cantidad de días que le quiere sumar a la fecha: "))
 
-while n <0 or n > 31 :
+while n <0 :
     print("ERROR, la cantidad de dias ingresados debe ser mayor o igual a 0 y menor o igual a 31")
     n = int(input("Ingrese la cantidad de días que le quiere sumar a la fecha: "))
 
-diasAgregados = d + n
 
-if (m == 4 or m == 6 or m == 9 or m == 11) and diasAgregados > 30 and diasAgregados < 365 :
-    a = a
-    m = m + 1
-    d = diasAgregados - 30
+if (m == 4 or m == 6 or m == 9 or m == 11) and n < 30 :     
+        diasAgregados = d + n
+
+        mesesAgregados = diasAgregados // 30 
+        diasSobrantes = diasAgregados % 30
+
+        if m
+
+        a = a
+        m = m + 1
+        d = diasAgregados - 30
 
 elif (m == 1 or m == 3 or m == 5 or m == 7 or m == 8 or m == 10 or m == 12) and diasAgregados > 31 and diasAgregados < 365 :
     a = a
@@ -221,7 +227,10 @@ elif (m == 1 or m == 3 or m == 5 or m == 7 or m == 8 or m == 10 or m == 12) and 
 
 print("La nueva fecha es:",d,"/",m,"/",a)
 
-"""
+
+if numAño % 4 != 0 :
+    print("El año",numAño,"NO es bisiesto")
+
 else :
     if numAño % 100 != 0 :
         print("El año",numAño," SÍ es bisiesto")
@@ -231,4 +240,115 @@ else :
             print("El año",numAño,"SÍ es bisiesto")
         
         else :
-            print("El año",numAño,"NO es bisiesto")"""
+            print("El año",numAño,"NO es bisiesto")
+            
+
+
+
+
+# Ejercicio 6
+
+num = int(input("Ingrese un número entero: ")) 
+
+
+
+# Ejercicio 7
+
+# Ejercicio 8
+
+cantidadEmpleados = int(input("Ingrese la cantidad de empelados que hay en la empresa: "))
+acumSalarios = 0
+cantSalario200k = 0
+cantSalario50k = 0
+salarioMayor = 0
+legajoMayor = 0
+importeTotal1 = 0
+importeTotal2 = 0
+importeTotal3 = 0
+
+while cantidadEmpleados <= 0 :
+    print("ERROR, la cantidad de empleados debe ser mayor a cero")
+    cantidadEmpleados = int(input("Ingrese la cantidad de empelados que hay en la empresa: "))
+
+i = 1
+while i <= cantidadEmpleados :
+    print(" ")
+    legajo = int(input("Ingrese el número de legajo: "))
+
+    categoria = int(input("Ingrese la categoría del empleado (1,2,3): "))
+
+    while categoria != 1 and categoria != 2 and categoria != 3 :
+        print("ERROR, la categoría del empelado debe ser 1,2 o 3")
+        categoria = int(input("Ingrese la categoría del empleado (1,2,3): "))
+
+    salario = float(input("Ingrese el sueldo del empleado: "))
+
+    while salario <= 0 :
+        print("ERROR, el salario del empleado debe ser mayor a 0")
+        salario = float(input("Ingrese el sueldo del empleado: "))
+
+    acumSalarios = acumSalarios + salario
+    if salario > 200000 :
+        cantSalario200k += 1
+
+    if categoria == 3 and salario < 50000 :
+        cantSalario50k += 1
+
+    if salario > salarioMayor :
+        salarioMayor = salario
+        legajoMayor = legajo
+    
+    salarioMenor = salario
+    if salario < salarioMenor :
+        salarioMenor = salario
+
+    if categoria == 1 :
+        importeTotal1 = importeTotal1 + salario
+
+    elif categoria == 2 :
+        importeTotal2 = importeTotal2 + salario
+
+    else :
+        importeTotal3 = importeTotal3 + salario
+
+    i += 1
+
+promedio = acumSalarios / cantidadEmpleados 
+
+print(" ")
+print("El importe total de salarios pagados por la empresa es:",acumSalarios)
+print("La cantidad de empelados que ganan un salario mayor a $200000 es:",cantSalario200k)
+print("La cantidad de empelados que ganan un salario menor a $50000 y su categoría es 3 es:",cantSalario50k)
+print("El legajo del empleado que más gana es:",legajoMayor)
+print("El sueldo más bajo es de: $",salarioMenor)
+print("El importe total de sueldos de la categoría 1 es:",importeTotal1)
+print("El importe total de sueldos de la categoría 2 es:",importeTotal2)
+print("El importe total de sueldos de la categoría 3 es:",importeTotal3)
+print("El salario promedio es:",promedio)
+
+"""
+
+# Ejercicio 9
+
+numero = int(input("Ingrese un número mayor a 0: "))
+numImpar = 0
+sumaImpares = 0
+i = 1
+while numero <= 0 :
+    print("ERROR, el número debe ser mayor a cero")
+    numero = int(input("Ingrese un número mayor a 0: "))
+
+while i <= numero :
+    if i % 2 != 0 :
+        numImpar = i
+        print(numImpar)
+        sumaImpares = sumaImpares + i
+    i += 1
+
+print("La suma de los números impares es: ",sumaImpares)
+
+
+# Ejercicio 10
+
+cantEspectadores = int(input("Ingrese la cantidad de espectadores: "))
+descuento = int(input("Ingrese 1 (si la función tiene descuento) o 2 (si la función NO tiene descuento)"))
