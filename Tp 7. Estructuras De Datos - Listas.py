@@ -2,10 +2,8 @@
 
 # Ejercicio 1
 
-
-def ingresarNumerosLista(n1,n2) :
+def validarIngresoNumeros(n1,n2) :
     numero = float(input("Ingrese un número. El mismo debe estar dentro del rango de valores que hay entre ambos números. Para finalizar, ingrese -1: "))
-    vecNumeros = [] 
 
     if n1 < n2 :
         while (numero < n1 or numero > n2) and numero != -1 :
@@ -25,28 +23,16 @@ def ingresarNumerosLista(n1,n2) :
             print("ERROR. El número ingresado debe estar entre el primero y segundo. ")
             numero = float(input("Ingrese un número. El mismo debe estar dentro del rango de valores que hay entre ambos números. Para finalizar, ingrese -1: "))
 
+    return numero
+
+
+def ingresarNumerosLista(n1,n2) :
+    vecNumeros = [] 
+    numero = validarIngresoNumeros(n1,n2)
 
     while numero != -1 :
         vecNumeros.append(numero)
-        numero = float(input("Ingrese un número. El mismo debe estar dentro del rango de valores que hay entre ambos números. Para finalizar, ingrese -1: "))
-
-        if n1 < n2 :
-            while (numero < n1 or numero > n2) and numero != -1 :
-                print()
-                print("ERROR. El número ingresado debe estar entre el primero y segundo. ")
-                numero = float(input("Ingrese un número. El mismo debe estar dentro del rango de valores que hay entre ambos números. Para finalizar, ingrese -1: "))
-
-        elif n1 == n2 :
-            while (numero != n1 or numero != n2) and numero != -1 :
-                print()
-                print("ERROR. El número ingresado debe estar entre el primero y segundo. ")
-                numero = float(input("Ingrese un número. El mismo debe estar dentro del rango de valores que hay entre ambos números. Para finalizar, ingrese -1: "))
-
-        else :
-            while (numero > n1 or numero < n2) and numero != -1 :
-                print()
-                print("ERROR. El número ingresado debe estar entre el primero y segundo. ")
-                numero = float(input("Ingrese un número. El mismo debe estar dentro del rango de valores que hay entre ambos números. Para finalizar, ingrese -1: "))
+        numero = validarIngresoNumeros(n1,n2)
 
     return vecNumeros
 
@@ -63,7 +49,6 @@ if largo <= 0 :
 
 else :
     print("La lista de números es:",vecNumeros)
-
 
 
 # Ejercicio 2
@@ -87,7 +72,7 @@ else :
 
 print("La suma de la lista de números es:",suma)
 
-"""
+
 # Ejercicio 3
 
 def invertirLista(vec) :
@@ -126,7 +111,6 @@ else :
     print("La lista NO es capicúa")
 
 
-"""
 # Ejercicio 4
 
 def contarApariciones(vec,num) :
@@ -152,7 +136,6 @@ contadorApariciones = contarApariciones(vecNumeros,num_a_buscar)
 print("El número",num_a_buscar,"está",contadorApariciones,"veces en la lista")
 
 
-"""
 # Ejercicio 5
 
 def invertirLista(vec) :
@@ -164,8 +147,7 @@ def invertirLista(vec) :
 
     return nuevaLista 
 
-"""   
-
+  
 numA = int(input("Ingrese el primer número: "))
 numB = int(input("Ingrese el segundo número, para determinar el rango de valores validos: "))
 
@@ -176,7 +158,7 @@ print()
 print("La lista original es:", vecNumeros)
 print("La lista invertida es: ",vecNumerosInvertido)
 
-
+"""
 # Ejercicio 6
 
 def obtenerPosicion(valor,vec) :
@@ -203,4 +185,3 @@ listaPosiciones = obtenerPosicion(valor,vecNumeros)
 print()
 print("Lista de posiciones del valor",valor,"en la lista original:",listaPosiciones)
 
-"""
