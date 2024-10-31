@@ -2,41 +2,46 @@
 # Tema Análisis de ventas online
 
 # Funciones para validad los datos de cada venta
+
+# Función que valida el ID
 def validarId() :
-    id = int(input("Ingrese el ID del producto: "))
-    while id < 0 :
-        print("ERROR, el ID del producto debe ser mayor a 0")
-        id = int(input("Ingrese el ID del producto: "))
-    return id
+    id = int(input("Ingrese el ID del producto: ")) # Se le pide al usuario que ingrese el ID del producto
+    while id < 0 : # Validamos que el mismo sea mayor a 0
+        print("ERROR, el ID del producto debe ser mayor a 0") # Mensaje de error para avisarle que debe ser mayor a 0
+        id = int(input("Ingrese el ID del producto: ")) # Se le vuelve a pedir que ingrese el ID, y repite el ciclo hasta que el mismo sea mayor a 0
+    return id # La función devuelve el ID validado
 
+# Función que valida el precio
 def validarPrecio() :
-    precio = float(input("Ingrese el precio del producto: "))
-    while precio < 0 :
-        print("ERROR, el precio del producto debe ser mayor a 0")
-        precio = float(input("Ingrese el precio del producto: "))
-    return precio
+    precio = float(input("Ingrese el precio del producto: "))  # Se le pide al usuario que ingrese el precio del producto
+    while precio < 0 : # Validamos que el mismo sea mayor a 0
+        print("ERROR, el precio del producto debe ser mayor a 0")  # Mensaje de error para avisarle que debe ser mayor a 0
+        precio = float(input("Ingrese el precio del producto: ")) # Se le vuelve a pedir que ingrese el precio, y repite el ciclo hasta que el mismo sea mayor a 0
+    return precio # La función devuelve el precio validado
     
+# Función que valida la cantidad vendida
 def validarCantidadVendida() :
-    cantVendida = int(input("Ingrese la cantidad del producto: "))
-    while cantVendida < 0 :
-        print("ERROR, la cantidad del producto debe ser mayor a 0")
-        cantVendida = int(input("Ingrese la cantidad del producto: "))
-    return cantVendida
-    
+    cantVendida = int(input("Ingrese la cantidad del producto: ")) # Se le pide al usuario que ingrese la cantidad vendida del producto
+    while cantVendida < 0 : # Validamos que la mismo sea mayor a 0
+        print("ERROR, la cantidad del producto debe ser mayor a 0") # Mensaje de error para avisarle que debe ser mayor a 0
+        cantVendida = int(input("Ingrese la cantidad del producto: ")) # Se le vuelve a pedir que ingrese la cantidad vendida, y repite el ciclo hasta que el mismo sea mayor a 0
+    return cantVendida # La función devuelve la cantidad vendida validada
+
+# Función que valida el mes   
 def validarFechaMes () :
-    mes = int(input("Ingrese el mes en el que se realizó la venta: "))
-    while mes <=0 or mes > 12 :
-        print("ERROR, el mes debe estar entre 1 y 12")
-        mes = int(input("Ingrese el mes en el que se realizó la venta: "))
-    return mes
+    mes = int(input("Ingrese el mes en el que se realizó la venta: ")) # Se le pide al usuario que ingrese el mes en el que vendió el producto
+    while mes <=0 or mes > 12 : # Validamos que la mismo sea mayor a 0 y menor a 12
+        print("ERROR, el mes debe estar entre 1 y 12") # Mensaje de error para avisarle que el mes debe estar entre 1 y 12
+        mes = int(input("Ingrese el mes en el que se realizó la venta: ")) # Se le vuelve a pedir que ingrese el mes, y repite el ciclo hasta que el mismo este entre 1 y 12
+    return mes # La función devuelve el mes validado
 
-
+# Función que valida el día
 def validarFechaDia(mes) :
-    fechaDia = int(input("Ingrese el día que se realizó la venta: "))
-    if mes == 1 or mes == 3 or mes == 5 or mes == 7 or mes == 8 or mes == 10 or mes == 12 :
-        while fechaDia < 0 or fechaDia> 31:
-            print("ERROR, el día debe ser mayor a 0 y menor a 31")
-            fechaDia = int(input("Ingrese el día que se realizó la venta: "))
+    fechaDia = int(input("Ingrese el día que se realizó la venta: "))  # Se le pide al usuario que ingrese el día en el que vendió el producto
+    if mes == 1 or mes == 3 or mes == 5 or mes == 7 or mes == 8 or mes == 10 or mes == 12 :  # Verifica los meses que tienen 31 días 
+        while fechaDia < 0 or fechaDia> 31:  # 
+            print("ERROR, el día debe ser mayor a 0 y menor a 31")  # Mensaje de error para avisarle que el mes debe estar entre 1 y 12
+            fechaDia = int(input("Ingrese el día que se realizó la venta: ")) # Se le vuelve a pedir que ingrese el mes, y repite el ciclo hasta que el mismo este entre 1 y 12
 
     elif mes == 2 :
         while fechaDia < 0 or fechaDia> 29:
@@ -97,7 +102,8 @@ def calcularTotalIngresos(vec) :
 
     for i in range(largo) :
         
-        vec[i precio] * vec[i cantidad]
+       ingreso = vec[i][2] * vec[i][3]
+       acumIngresos += ingreso
 
     return acumIngresos
 
@@ -107,11 +113,30 @@ def obtenerCantProductosCategoria(vec,cat) :
     cantTotal = 0  
 
     for i in range(largo) :
-        if cat == vec[i categoria] :
-            cantTotal += vec[i cantVendida]
+        if cat == vec[i][1] :
+            cantTotal += vec[i][3]
 
     return cantTotal
 
+def obtenerDiasDeVentas(vec):
+    largo = len(vec)
+    cantdias=1
+    
+    for i in range(largo) :
+        fecha1 = [vec[0][4], vec[0][5]]
+        if [vec[i][4], vec[i][5]] != fecha1:
+            cantdias+=1
+            
+    return cantdias
+        
+
+"""
+def calcularPromedioIngresosDiarios(vec) :
+    largo = len(vec)
+
+    for i in range(largo) :
+        if vec[i][4] == 
+"""
 
 
 # PROGRAMA PRINCIPAL
@@ -126,6 +151,8 @@ while cantVentas < 0 :
 
 vecVentas = cargarDatosVentas(cantVentas)
 
+
+print()
 categoriaABuscar = input("Ingrese la categoría del producto que desea saber cuantos productos se han vendido en total: ")
 
 print()
@@ -138,4 +165,6 @@ print()
 totalProductosXCategoria = obtenerCantProductosCategoria(vecVentas,categoriaABuscar)
 print("De la categoria",categoriaABuscar,"se han vendido",totalProductosXCategoria,"productos")
 
+cantDias = obtenerDiasDeVentas(vecVentas)
+print(cantVentas)
 
