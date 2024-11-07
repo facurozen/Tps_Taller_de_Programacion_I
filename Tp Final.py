@@ -118,25 +118,27 @@ def obtenerCantProductosCategoria(vec,cat) :
 
     return cantTotal
 
+
 def obtenerDiasDeVentas(vec):
-    largo = len(vec)
-    cantdias=1
-    
-    for i in range(largo) :
-        fecha1 = [vec[0][4], vec[0][5]]
-        if [vec[i][4], vec[i][5]] != fecha1:
-            cantdias+=1
-            
-    return cantdias
+    largo = len(vec)  
+    listaFechas = []  
+    for i in range(largo):  
+        mes1 = vec[i][4]  
+        dia1 = vec[i][5]  
+
+        fecha = (mes1, dia1)
         
+        if fecha not in listaFechas:
+            listaFechas.append(fecha)
 
-"""
-def calcularPromedioIngresosDiarios(vec) :
-    largo = len(vec)
+    return listaFechas
 
-    for i in range(largo) :
-        if vec[i][4] == 
-"""
+
+def calcularPromedioIngresosDiarios(vec,cantDias) :
+
+    promedio = calcularTotalIngresos(vec) / cantDias
+
+    return promedio
 
 
 # PROGRAMA PRINCIPAL
@@ -165,6 +167,10 @@ print()
 totalProductosXCategoria = obtenerCantProductosCategoria(vecVentas,categoriaABuscar)
 print("De la categoria",categoriaABuscar,"se han vendido",totalProductosXCategoria,"productos")
 
-cantDias = obtenerDiasDeVentas(vecVentas)
-print(cantVentas)
 
+cantDias = obtenerDiasDeVentas(vecVentas)
+
+print(len(cantDias))
+
+promedio = calcularPromedioIngresosDiarios(vecVentas,len(cantDias))
+print("El promedio de ingresos diarios es de:",promedio)
