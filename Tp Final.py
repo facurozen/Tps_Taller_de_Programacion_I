@@ -153,8 +153,8 @@ def calcularPromedioIngresosDiarios(vec,cantDias) :
 print("Bienvenidos al sistema de registración de ventas de Fast Cars")
 print("-------------------------------------------------------------------------------")
 
-# Se le pide al usuario que ingrese la cantidad de ventas que realizó en el último mes. Al ser ventas, el tipo de dato es entero, no puede ser decimal
-cantVentas = int(input("Ingrese la cantidad de ventas realizadas en el último mes: "))
+# Se le pide al usuario que ingrese la cantidad de ventas que realizó en el último año. Al ser ventas, el tipo de dato es entero, no puede ser decimal
+cantVentas = int(input("Ingrese la cantidad de ventas realizadas en el último año: "))
 
 # Al tener que ingresar como minimo 10 ventas, si el usuario ingresa menos, se le vuelve a pedir
 while cantVentas < 10 :
